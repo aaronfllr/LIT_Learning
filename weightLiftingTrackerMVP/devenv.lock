@@ -1,19 +1,62 @@
 {
   "nodes": {
+    "android-nixpkgs": {
+      "inputs": {
+        "devshell": "devshell",
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1712088965,
+        "owner": "tadfisher",
+        "repo": "android-nixpkgs",
+        "rev": "c500d23a40a7db979537655f914cbc1609b14bbd",
+        "treeHash": "99067699508c89202fae3693b1f9f771739975d6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tadfisher",
+        "ref": "stable",
+        "repo": "android-nixpkgs",
+        "type": "github"
+      }
+    },
     "devenv": {
       "locked": {
         "dir": "src/modules",
-        "lastModified": 1715968813,
+        "lastModified": 1716095607,
         "owner": "cachix",
         "repo": "devenv",
-        "rev": "c30bdfd2c289e77e9d278ac0d9262d856b17f324",
-        "treeHash": "1f94b5d8bd509675d4777a5b7c4e7098d5a04116",
+        "rev": "32983f6dbc1583e333eaaf8126dc21dfbcbef291",
+        "treeHash": "6d5dd30b138123c570417f2bac23874d884674c7",
         "type": "github"
       },
       "original": {
         "dir": "src/modules",
         "owner": "cachix",
         "repo": "devenv",
+        "type": "github"
+      }
+    },
+    "devshell": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "android-nixpkgs",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1713532798,
+        "owner": "numtide",
+        "repo": "devshell",
+        "rev": "12e914740a25ea1891ec619bb53cf5e6ca922e40",
+        "treeHash": "db337b00aa8a013fba18d4e124fc4a85221ec127",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "devshell",
         "type": "github"
       }
     },
@@ -30,6 +73,42 @@
       "original": {
         "owner": "edolstra",
         "repo": "flake-compat",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "inputs": {
+        "systems": "systems"
+      },
+      "locked": {
+        "lastModified": 1710146030,
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "treeHash": "bd263f021e345cb4a39d80c126ab650bebc3c10c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": "systems_2"
+      },
+      "locked": {
+        "lastModified": 1710146030,
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "treeHash": "bd263f021e345cb4a39d80c126ab650bebc3c10c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
         "type": "github"
       }
     },
@@ -56,6 +135,38 @@
     },
     "nixpkgs": {
       "locked": {
+        "lastModified": 1715961556,
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "4a6b83b05df1a8bd7d99095ec4b4d271f2956b64",
+        "treeHash": "3405d749db7b1c1845309d6c6d7e03317e5fddb0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1716061101,
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e7cc61784ddf51c81487637b3031a6dd2d6673a2",
+        "treeHash": "0dfa8dcfb5f2b25b4be1a6f873c087557f335fac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-23.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
         "lastModified": 1713361204,
         "owner": "cachix",
         "repo": "devenv-nixpkgs",
@@ -67,22 +178,6 @@
         "owner": "cachix",
         "ref": "rolling",
         "repo": "devenv-nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-stable": {
-      "locked": {
-        "lastModified": 1715668745,
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "9ddcaffecdf098822d944d4147dd8da30b4e6843",
-        "treeHash": "c31bb09a94d4cb9c45bb25295d8af8515114a18e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-23.11",
-        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -111,9 +206,40 @@
     },
     "root": {
       "inputs": {
+        "android-nixpkgs": "android-nixpkgs",
         "devenv": "devenv",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "pre-commit-hooks": "pre-commit-hooks"
+      }
+    },
+    "systems": {
+      "locked": {
+        "lastModified": 1681028828,
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "treeHash": "cce81f2a0f0743b2eb61bc2eb6c7adbe2f2c6beb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
+      }
+    },
+    "systems_2": {
+      "locked": {
+        "lastModified": 1681028828,
+        "owner": "nix-systems",
+        "repo": "default",
+        "rev": "da67096a3b9bf56a91d16901293e51ba5b49a27e",
+        "treeHash": "cce81f2a0f0743b2eb61bc2eb6c7adbe2f2c6beb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-systems",
+        "repo": "default",
+        "type": "github"
       }
     }
   },
